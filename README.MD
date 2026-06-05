@@ -28,7 +28,7 @@ Though i got ~92% accuracy while training this neural-network still not upto the
 Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/NN-DIGRECOG.git
+https://github.com/pinkCastle2204/NN-DIGRECOG.git
 cd NN-DIGRECOG
 ```
 
