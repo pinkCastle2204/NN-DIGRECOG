@@ -8,9 +8,9 @@ The algorithm has two passes:
 
 * #### FORWARD PASS:
     Inputs are propagated through the layers to produce predictions and compute the loss.
-    $$
+    ```math
     Z = XW + b
-    $$
+    ```
 Where:
 - $Z$ = Output of the Forwar Pass
 - $X$ = Input
@@ -21,9 +21,9 @@ Where:
 * #### BACKWARD PASS:
     Gradients of the loss with respect to weights, biases, and inputs are computed using back propagation and chain rule is used to trace back to the input.
 
-    $$
-    W_{new} = W_{old} - \eta \frac{\partial L}{\partial W}
-    $$
+```math
+W_{new} = W_{old} - \eta \frac{\partial L}{\partial W}
+```
 Where:
 - $W_{new}$ = updated weights after gradient descent
 - $W_{old}$ = weights before update
