@@ -9,7 +9,9 @@ Though i got ~92% accuracy while training this neural-network still not upto the
 
 ```text
 .
-├── canvas.py               
+├── canvas.py
+├── main.py
+├── dataset               
 ├── nnfs
 │   ├── activations.py      
 │   ├── layers.py           
@@ -52,11 +54,19 @@ pip install -r requirements.txt
 
 ## Dataset
 
-The MNIST dataset is not included in this repository because of GitHub file size limits. Hence I have removed the training code as well. I will upload it in near future
+The MNIST dataset is not included in this repository because of GitHub file size limits. Hence I have removed the training code as well. I will upload it in near future.
+Extract the dataset.zip in the project directory.
+
+[Dataset](https://drive.google.com/file/d/1a8mKmFzgu9tFgPci7ex3aGDmHoOp5QQb/view?usp=sharing)
 
 
 ## Running the Project
 
+Train the neural network:
+
+```bash
+python main.py
+```
 Launch the drawing canvas:
 
 ```bash
