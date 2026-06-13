@@ -1,5 +1,5 @@
 import numpy as np
-from nnfs.activations import onehot,softmax,cross_entropy_loss,sigmoid_derivative,sigmoid
+from nnfs.activations import onehot,softmax,cross_entropy_loss,relu,relu_derivative
 from nnfs.layers import Dense
 
 train_data = np.loadtxt("dataset/train/mnist_train.csv", delimiter=',', skiprows=1)
@@ -21,14 +21,14 @@ layer2 = Dense(128,10)
 epochs = 500
 for epoch in range(epochs):
     Z1 = layer1.forward(X_train)
-    A1 = sigmoid(Z1)
+    A1 = relu(Z1)
     Z2 = layer2.forward(A1)
     A2 = softmax(Z2)
     loss = cross_entropy_loss(A2,onehot_Y_train)
 
     dZ2 = (A2 - onehot_Y_train)/X_train.shape[0]
     dA1 = layer2.backward(dZ2)
-    dZ1 = dA1*sigmoid_derivative(Z1)
+    dZ1 = dA1*relu_derivative(Z1)
     layer1.backward(dZ1)
 
     layer2.W -= learning_rate * layer2.dW
@@ -42,7 +42,7 @@ for epoch in range(epochs):
         print(f"Epoch {epoch} | Loss: {loss:.4f} | Accuracy: {accuracy:.2f}%")
 
 Z1_test = layer1.forward(X_test)
-A1_test = sigmoid(Z1_test)
+A1_test = relu(Z1_test)
 Z2_test = layer2.forward(A1_test)
 A2_test = softmax(Z2_test)
 
