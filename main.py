@@ -13,7 +13,7 @@ Y_test = test_data[:,0].astype(int)
 
 onehot_Y_train = onehot(Y_train)
 
-learning_rate = 0.01
+learning_rate = 0.1
 
 layer1 = Dense(784,128)
 layer2 = Dense(128,10)
