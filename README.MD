@@ -43,7 +43,7 @@ python -m venv .venv
 source .venv/bin/activate
 
 # Windows
-.venv\Scripts\activate.ps1
+.venv\bin\activate.ps1
 ```
 
 Install dependencies:
